@@ -21,3 +21,24 @@ Allow: /
 
 User-agent: Claude-SearchBot
 Allow: /
+
+# robots.txt — public site + online booking
+# Open to all crawlers (search engines and AI).
+# Reminder: robots.txt is advisory, not security. Anything sensitive
+# or behind a login must sit behind authentication, not just be listed here.
+
+User-agent: *
+
+# Block the functional booking steps — NOT the booking landing page.
+# (Adjust these to match the site's real URLs.)
+Disallow: /booking/confirm
+Disallow: /booking/confirmation
+Disallow: /thank-you
+
+# Internal search results (duplicate, low value)
+Disallow: /search
+
+# Admin / system area (adjust to the CMS — e.g. /wp-admin/ for WordPress)
+Disallow: /admin
+
+Sitemap: https://YOUR-DOMAIN/sitemap.xml
